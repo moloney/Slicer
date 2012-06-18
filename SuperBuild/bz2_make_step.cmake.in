@@ -1,0 +1,4 @@
+execute_process(
+    COMMAND make CFLAGS=-fPIC\ -Wall\ -Winline\ -O2\ -g\ -D_FILE_OFFSET_BITS=64
+    WORKING_DIRECTORY "@bz2_SOURCE_DIR@"
+    )

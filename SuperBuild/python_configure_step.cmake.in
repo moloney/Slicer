@@ -12,7 +12,12 @@ if(UNIX)
     set(CPPFLAGS "-I@CMAKE_CURRENT_BINARY_DIR@/tcl-build/include")
     set(with_tcl_param "--with-tcl=@CMAKE_CURRENT_BINARY_DIR@/tcl-build")
   endif()
-
+  
+  set(LD_LIBRARY_PATH "@CMAKE_CURRENT_BINARY_DIR@/bz2:${LD_LIBRARY_PATH}")
+  set(LDFLAGS "${LDFLAGS} -L@CMAKE_CURRENT_BINARY_DIR@/bz2")
+  set(CPPFLAGS "${CPPFLAGS} -I@CMAKE_CURRENT_BINARY_DIR@/bz2")
+  set(CFLAGS "${CFLAGS} -I@CMAKE_CURRENT_BINARY_DIR@/bz2")
+  
   set(extra_configure_flags)
   if(APPLE)
     set(CMAKE_OSX_ARCHITECTURES "@CMAKE_OSX_ARCHITECTURES@")

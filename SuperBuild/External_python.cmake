@@ -13,6 +13,7 @@ if(Slicer_USE_PYTHONQT_WITH_TCL)
     list(APPEND python_DEPENDENCIES tcl)
   else()
     list(APPEND python_DEPENDENCIES tcl tk)
+    list(APPEND python_DEPENDENCIES bz2)
   endif()
 endif()
 
